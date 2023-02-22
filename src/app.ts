@@ -19,10 +19,10 @@ const winningCombos: number[][] = [
   const squareEls:NodeList = document.querySelectorAll('.sqr')!;
   const messageEl:HTMLElement = document.getElementById('message')!;
   const resetBtnEl:HTMLButtonElement = document.querySelector('button')!;
-   
+  
   /*----------------------------- Event Listeners -----------------------------*/
   
-  document.querySelector('.board')!.addEventListener('click', handleClick)
+  document.querySelector('.board')!.addEventListener('click', handleClick);
   resetBtnEl.addEventListener('click', init)
   /*-------------------------------- Functions --------------------------------*/
   
