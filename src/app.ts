@@ -16,12 +16,13 @@ const winningCombos: number[][] = [
   
   
   /*------------------------ Cached Element References ------------------------*/
-  const squareEls = document.querySelectorAll('.sqr')
-  const messageEl = document.getElementById('message')
-  const resetBtnEl = document.querySelector('button')
-  
+  const squareEls:NodeList = document.querySelectorAll('.sqr')!;
+  const messageEl:HTMLElement = document.getElementById('message')!;
+  const resetBtnEl:HTMLButtonElement = document.querySelector('button')!;
+   
   /*----------------------------- Event Listeners -----------------------------*/
-  document.querySelector('.board').addEventListener('click', handleClick)
+  
+  document.querySelector('.board')!.addEventListener('click', handleClick)
   resetBtnEl.addEventListener('click', init)
   /*-------------------------------- Functions --------------------------------*/
   
@@ -39,9 +40,12 @@ const winningCombos: number[][] = [
     board[idx] = turn
   }
   
-  function handleClick(evt):void {
-    console.log(evt.target.id)
-    const sqIdx = parseInt(evt.target.id.replace('sq', ''))
+  function handleClick(evt:MouseEvent):void {
+    const target = evt.target as HTMLElement;
+    if (!target.id) {
+      return;
+    }
+    const sqIdx = parseInt(target.id.replace('sq', ''))
   
     if (isNaN(sqIdx) || board[sqIdx] || winner) return
     placePiece(sqIdx)
