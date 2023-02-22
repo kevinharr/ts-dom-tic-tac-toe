@@ -32,8 +32,11 @@ function placePiece(idx) {
     board[idx] = turn;
 }
 function handleClick(evt) {
-    console.log(evt.target.id);
-    const sqIdx = parseInt(evt.target.id.replace('sq', ''));
+    const target = evt.target;
+    if (!target.id) {
+        return;
+    }
+    const sqIdx = parseInt(target.id.replace('sq', ''));
     if (isNaN(sqIdx) || board[sqIdx] || winner)
         return;
     placePiece(sqIdx);
