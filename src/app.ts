@@ -30,7 +30,7 @@ const winningCombos: number[][] = [
   init()
   
   function init():void {
-    board = [0, 1, 0, -1, 0, 1, -1, 0, 0]
+    board = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     turn = 1
     winner = false
     tie = false

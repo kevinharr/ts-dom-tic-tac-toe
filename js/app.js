@@ -16,8 +16,9 @@ let turn, winner, tie, board;
 const squareEls = document.querySelectorAll('.sqr');
 const messageEl = document.getElementById('message');
 const resetBtnEl = document.querySelector('button');
+const boardTwo = document.querySelector('.board');
 /*----------------------------- Event Listeners -----------------------------*/
-document.querySelector('.board').addEventListener('click', handleClick);
+boardTwo.addEventListener('click', handleClick);
 resetBtnEl.addEventListener('click', init);
 /*-------------------------------- Functions --------------------------------*/
 init();
